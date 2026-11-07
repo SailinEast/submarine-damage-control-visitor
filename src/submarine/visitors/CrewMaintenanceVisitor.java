@@ -8,6 +8,9 @@ public class CrewMaintenanceVisitor implements ModuleVisitor {
     private static final int COOLING_AMOUNT_CELSIUS = 250;
     private static final int WELD_REPAIR_PERCENT = 35;
     private static final int REWIRE_REPAIR_PERCENT = 40;
+    private static final String ANSI_GREEN = "\u001B[32m";
+    private static final String ANSI_RESET = "\u001B[0m";
+
     private final RepairTool tool;
 
     public CrewMaintenanceVisitor(RepairTool tool) {
@@ -51,6 +54,7 @@ public class CrewMaintenanceVisitor implements ModuleVisitor {
     }
 
     private void logRepair(String action, int before, int after, String unit) {
-        System.out.printf(">> %s (%d%s -> %d%s)%n", action, before, unit, after, unit);
+        System.out.printf(ANSI_GREEN + ">> [MAINTENANCE LOG] %s (%d%s -> %d%s)%n" + ANSI_RESET,
+                action, before, unit, after, unit);
     }
 }
