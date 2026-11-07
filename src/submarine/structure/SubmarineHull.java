@@ -9,8 +9,9 @@ import java.util.List;
 public class SubmarineHull {
     private final List<SubmarineModule> submarineModules = new ArrayList<>();
 
-    public void addModule(SubmarineModule module) {
+    public SubmarineHull addModule(SubmarineModule module) {
         submarineModules.add(module);
+        return this;
     }
 
     public void runPass(ModuleVisitor visitor) {
