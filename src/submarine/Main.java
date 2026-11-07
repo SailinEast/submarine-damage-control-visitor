@@ -41,7 +41,9 @@ class Main {
                 case "2": tool = RepairTool.WELDING_TORCH; break;
                 case "3": tool = RepairTool.SCREWDRIVER; break;
                 default: {
+                    turn--;
                     clearTerminalWithANSI();
+                    System.out.println(ANSI_RED + ">> [INVALID INPUT] Please enter 1, 2, or 3." + ANSI_RESET);
                     continue;
                 }
             }
